@@ -285,7 +285,7 @@ h2 {
 
 .logo-img {
     max-height: 100%;
-    max-width: 220px; 
+    max-width: 100px; 
     width: auto;
     object-fit: contain;
     filter: none; /* Full Color */
@@ -396,3 +396,4 @@ h2 {
   }
 
 }
+
