@@ -1,6 +1,6 @@
 /* ==========================================================================
    INNOVEDEX OFFICIAL STYLE SHEET
-   Theme: Modern Corporate Blue (Mobile Optimized)
+   Theme: Modern Corporate Blue (Fixed Grid Layout)
    Palette Ref: #011f4b, #03396c, #005b96, #6497b1, #b3cde0
    ========================================================================== */
 
@@ -38,18 +38,16 @@ body {
   line-height: 1.6;
   padding: 2rem;
   min-height: 100vh;
-  /* ป้องกันการเลื่อนซ้ายขวาในมือถือ */
   overflow-x: hidden; 
   width: 100%;
 }
 
-/* 2. MAIN BENTO GRID SYSTEM (Desktop Default) */
+/* 2. MAIN BENTO GRID SYSTEM */
 .bento-grid {
   display: grid;
   max-width: 1300px;
   margin: 0 auto;
   gap: var(--gap);
-  /* Desktop: 4 Columns */
   grid-template-columns: repeat(4, 1fr); 
   grid-auto-flow: dense;
 }
@@ -74,24 +72,20 @@ body {
 }
 
 /* ==========================================================================
-   4. HERO BANNER SECTION (Bottom Alignment)
+   4. HERO BANNER SECTION
    ========================================================================== */
 .hero-banner {
   grid-column: span 4;
   position: relative;
   min-height: 550px;
-  
-  /* จัดเนื้อหาให้ชิดล่างซ้าย */
   display: flex;
   align-items: flex-end; 
   justify-content: flex-end;
-  
   border: none;
   padding: 0;
   
   background-image: url('img/composition/head.jpg');
   background-size: cover;
-  /* Focus หน้าคนด้านบน (25%) เพราะด้านล่างมี Text บัง */
   background-position: center 60%; 
   color: var(--text-light);
   overflow: hidden;
@@ -100,7 +94,6 @@ body {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  /* Gradient ดำเข้มที่ขอบล่างเพื่อให้อ่าน Text ออก */
   background: linear-gradient(to bottom, 
     rgba(1, 31, 75, 0) 30%,      
     rgba(1, 31, 75, 0.5) 70%,    
@@ -116,16 +109,12 @@ body {
   display: flex;
   align-items: center; 
   gap: 2rem;
-  
-  /* ระยะห่างจากขอบ */
   padding-left: 3rem;  
   padding-right: 3rem; 
-  padding-bottom: 2rem; /* ดันขึ้นจากขอบล่างเล็กน้อย */
-  
+  padding-bottom: 2rem; 
   max-width: 1200px;
 }
 
-/* Logo Styling */
 .logo-card {
   background: rgba(255, 255, 255);
   width: 120px;
@@ -177,7 +166,49 @@ body {
 }
 
 /* ==========================================================================
-   5. CONTENT TILES (Vision, Mission, Founders)
+   5. ARCHIVE SECTION (FIXED: Grid Layout)
+   ========================================================================== */
+.archive-container {
+    grid-column: span 4;
+    background: #ffffff;
+}
+
+.archive-grid {
+    /* ใช้ CSS Grid แทน Flexbox เพื่อให้ขนาดปุ่มเท่ากัน */
+    display: grid;
+    /* auto-fill: สร้างคอลัมน์เพิ่มเรื่อยๆ ตามความกว้างหน้าจอ */
+    /* minmax(220px, 1fr): ปุ่มกว้างอย่างน้อย 220px ถ้าเหลือที่ให้ขยายได้ */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.archive-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-main); /* Dark Blue */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 1rem;
+    /* บังคับความสูงให้เท่ากันสวยงาม */
+    height: 100%; 
+    min-height: 60px;
+}
+
+.archive-btn:hover {
+    background-color: var(--accent-primary); /* Ocean Blue */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 91, 150, 0.3);
+}
+
+/* ==========================================================================
+   6. CONTENT TILES
    ========================================================================== */
 
 h2 {
@@ -189,12 +220,10 @@ h2 {
   letter-spacing: 0.5px;
 }
 
-/* Grid Positioning for Desktop */
 .vision { grid-column: span 2; }
 .mission { grid-column: span 2; }
 .founders-container { grid-column: span 4; }
 
-/* Text Styles */
 .vision p, .mission-intro {
   color: #334e68;
   font-size: 1.05rem;
@@ -253,7 +282,7 @@ h2 {
 }
 
 /* ==========================================================================
-   6. PARTNERS & SPONSORS (Larger & Full Color)
+   7. PARTNERS & SPONSORS
    ========================================================================== */
 .partners-container, .sponsors-container {
     grid-column: span 4;
@@ -269,11 +298,11 @@ h2 {
     align-items: center;
     gap: 2rem; 
     margin-top: 1.5rem;
-    padding: 1rem;
+    padding: 2rem;
 }
 
 .logo-item {
-    height: 180px; 
+    height: 200px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -285,7 +314,7 @@ h2 {
 
 .logo-img {
     max-height: 100%;
-    max-width: 180px; 
+    max-width: 220px; 
     width: auto;
     object-fit: contain;
     filter: none; /* Full Color */
@@ -297,7 +326,6 @@ h2 {
     transform: scale(1.1);
 }
 
-/* Footer */
 .footer {
   text-align: center;
   padding: 4rem 1rem;
@@ -307,7 +335,7 @@ h2 {
 }
 
 /* ==========================================================================
-   7. RESPONSIVE DESIGN (The Critical Fix)
+   8. RESPONSIVE DESIGN (Fixes + Archive)
    ========================================================================== */
 
 /* Tablet (max-width: 1024px) */
@@ -315,8 +343,7 @@ h2 {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  /* Force items to take full width or half width correctly */
-  .hero-banner, .founders-container, .partners-container, .sponsors-container {
+  .hero-banner, .archive-container, .founders-container, .partners-container, .sponsors-container {
     grid-column: span 2;
   }
   .vision, .mission {
@@ -328,7 +355,7 @@ h2 {
   .hero-banner h1 { font-size: 2.5rem; }
 }
 
-/* MOBILE (max-width: 640px) - FIXING THE SQUASHED LAYOUT */
+/* MOBILE (max-width: 640px) */
 @media (max-width: 640px) {
   body { 
     padding: 1rem; 
@@ -336,27 +363,25 @@ h2 {
   }
   
   .bento-grid {
-    /* เปลี่ยนเป็น 1 คอลัมน์เต็ม */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
   
-  /* บังคับให้ทุก Tile กว้างเต็มจอ */
-  .tile, .hero-banner, .vision, .mission, .founders-container, .partners-container, .sponsors-container {
-    grid-column: auto; /* Reset grid positioning */
+  .tile, .hero-banner, .archive-container, .vision, .mission, .founders-container, .partners-container, .sponsors-container {
+    grid-column: auto;
     width: 100%;
-    padding: 1.5rem; /* ลด Padding เพื่อประหยัดที่ */
+    padding: 1.5rem;
   }
   
-  /* Hero Banner Fixes */
+  /* Hero Fixes */
   .hero-banner {
     min-height: 480px;
-    background-position: center bottom; /* ปรับภาพให้เห็นคนด้านล่างมากขึ้นในแนวตั้ง */
+    background-position: center bottom;
   }
   
   .hero-content-wrapper {
-    flex-direction: column; /* เรียง Logo กับ Text แนวตั้ง */
+    flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem;
     padding-bottom: 2rem;
@@ -373,9 +398,14 @@ h2 {
   .hero-banner h1 { font-size: 2.2rem; }
   .hero-banner .description { font-size: 0.95rem; }
   
+  /* Archive Mobile Fix */
+  .archive-grid {
+    grid-template-columns: 1fr; /* บนมือถือให้เหลือ 1 คอลัมน์เต็มๆ */
+  }
+
   /* Founders Fixes */
   .founders-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 คนต่อแถว */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   
@@ -387,15 +417,9 @@ h2 {
   }
   
   .logo-item { 
-      height: 80px; /* ลดขนาด Logo ในมือถือให้พอดี */
-      width: 45%; /* ให้เรียงแถวละประมาณ 2 อัน */
+      height: 80px;
+      width: 45%;
   } 
   
-  .logo-img { 
-      max-width: 100%; 
-  }
-
+  .logo-img { max-width: 100%; }
 }
-
-
-
