@@ -1,13 +1,13 @@
 /* ==========================================================================
    INNOVEDEX OFFICIAL STYLE SHEET
-   Theme: Modern Corporate Blue & Photo Hero (Refined Proportions)
+   Theme: Modern Corporate Blue (Fixed Grid Layout)
    Palette Ref: #011f4b, #03396c, #005b96, #6497b1, #b3cde0
    ========================================================================== */
 
 /* 1. GLOBAL VARIABLES & RESET */
 :root {
   /* --- Color Palette --- */
-  --bg-body: #b3cde0;        /* Pale Blue Background */
+  --bg-body: #e4ecf2;        /* Pale Blue Background */
   --bg-tile: #ffffff;        /* Pure White Tile */
   
   --text-main: #011f4b;      /* Deep Navy (Main Text) */
@@ -38,7 +38,8 @@ body {
   line-height: 1.6;
   padding: 2rem;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: hidden; 
+  width: 100%;
 }
 
 /* 2. MAIN BENTO GRID SYSTEM */
@@ -71,39 +72,32 @@ body {
 }
 
 /* ==========================================================================
-   4. HERO BANNER SECTION (UPDATED: Bottom Alignment)
+   4. HERO BANNER SECTION
    ========================================================================== */
 .hero-banner {
   grid-column: span 4;
   position: relative;
-  min-height: 550px; /* เพิ่มความสูงอีกนิด ให้ภาพดูโปร่ง */
-  
-  /* --- KEY CHANGE: จัดเนื้อหาให้ชิดล่าง --- */
+  min-height: 550px;
   display: flex;
-  align-items: flex-end; /* ดันทุกอย่างลงมาด้านล่าง (ตามลูกศรแดง) */
-  justify-content: flex-end; /* จัดชิดซ้าย */
-  
+  align-items: flex-end; 
+  justify-content: flex-end;
   border: none;
   padding: 0;
   
-  /* Background Setting */
   background-image: url('img/composition/head.jpg');
   background-size: cover;
-  /* ขยับภาพขึ้นลงได้ที่นี่: center 20% = เน้นบน, center 80% = เน้นล่าง */
   background-position: center 60%; 
   color: var(--text-light);
   overflow: hidden;
 }
 
-/* Gradient Overlay: ปรับให้ข้างล่างมืดพอที่จะรองรับตัวหนังสือ */
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  /* ไล่สีจากโปร่งใส (บน) -> ไปหาน้ำเงินเข้มจัด (ล่างสุด) */
   background: linear-gradient(to bottom, 
-    rgba(1, 31, 75, 0) 0%,      /* บนสุดโปร่งใส เห็นหน้าคนชัด */
-    rgba(1, 31, 75, 0.4) 60%,   /* ตรงกลางเริ่มมืดนิดๆ */
-    rgba(1, 31, 75, 0.95) 100%  /* ล่างสุดเข้มมาก เพื่อให้อ่าน Text ออก */
+    rgba(1, 31, 75, 0) 30%,      
+    rgba(1, 31, 75, 0.5) 70%,    
+    rgba(1, 31, 75, 0.95) 100%   
   );
   z-index: 1;
 }
@@ -113,25 +107,23 @@ body {
   z-index: 2;
   width: 100%;
   display: flex;
-  align-items: center; /* จัด Logo กับ Text ให้ตรงกันในแนวนอน */
+  align-items: center; 
   gap: 2rem;
-  
-  /* --- KEY CHANGE: ระยะห่างจากขอบล่าง --- */
-  padding: 3rem; /* เว้นระยะจากขอบล่างและซ้าย */
-  padding-bottom: 4rem; /* ดันขึ้นมาจากขอบล่างอีกนิด ไม่ให้ติดพื้นเกินไป */
+  padding-left: 3rem;  
+  padding-right: 3rem; 
+  padding-bottom: 2rem; 
   max-width: 1200px;
 }
 
-/* --- LOGO & TEXT STYLING (คงเดิมแต่ปรับแต่งนิดหน่อย) --- */
 .logo-card {
-  background: rgba(255, 255, 255, 0.95);
-  width: 130px;
-  height: 130px;
+  background: rgba(255, 255, 255);
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px;
+  padding: 15px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   border: 4px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
@@ -146,76 +138,79 @@ body {
 
 .text-content {
   flex: 1;
-  /* เพิ่มเงาให้ตัวหนังสืออ่านง่ายขึ้นเมื่ออยู่บนเสื้อนักเรียน */
-  text-shadow: 0 4px 12px rgba(0,0,0,0.8); 
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
 .hero-banner h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin: 0;
   line-height: 1;
   color: #ffffff;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .hero-banner .tagline {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 500;
-  color: #b3cde0; /* สีฟ้าอ่อน ตัดกับพื้นหลังเข้มได้ดี */
+  color: #b3cde0; 
   margin-bottom: 0.5rem;
   letter-spacing: 0.5px;
 }
 
 .hero-banner .description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   max-width: 700px;
   color: #e2e8f0;
   opacity: 0.9;
   line-height: 1.5;
 }
 
-.hero-banner .badge {
-  display: inline-block;
-  background: var(--accent-primary);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  border: 1px solid rgba(255,255,255,0.4);
+/* ==========================================================================
+   5. ARCHIVE SECTION (FIXED: Grid Layout)
+   ========================================================================== */
+.archive-container {
+    grid-column: span 4;
+    background: #ffffff;
 }
 
-/* RESPONSIVE: ปรับสำหรับมือถือ */
-@media (max-width: 640px) {
-  .hero-banner {
-    align-items: flex-end; /* มือถือก็ให้ชิดล่างเหมือนกัน */
-    background-position: center center;
-  }
-  
-  .hero-content-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.5rem;
-    padding-bottom: 2rem;
+.archive-grid {
+    /* ใช้ CSS Grid แทน Flexbox เพื่อให้ขนาดปุ่มเท่ากัน */
+    display: grid;
+    /* auto-fill: สร้างคอลัมน์เพิ่มเรื่อยๆ ตามความกว้างหน้าจอ */
+    /* minmax(220px, 1fr): ปุ่มกว้างอย่างน้อย 220px ถ้าเหลือที่ให้ขยายได้ */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
-  }
-  
-  .logo-card {
-    width: 90px;
-    height: 90px;
-    padding: 12px;
-    margin-bottom: 0;
-  }
-  
-  .hero-banner h1 { font-size: 2.2rem; }
+    margin-top: 1.5rem;
+}
+
+.archive-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-main); /* Dark Blue */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 1rem;
+    /* บังคับความสูงให้เท่ากันสวยงาม */
+    height: 100%; 
+    min-height: 60px;
+}
+
+.archive-btn:hover {
+    background-color: var(--accent-primary); /* Ocean Blue */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 91, 150, 0.3);
 }
 
 /* ==========================================================================
-   5. CONTENT TILES (Vision, Mission, Founders)
+   6. CONTENT TILES
    ========================================================================== */
 
-/* Typography Helpers */
 h2 {
   font-size: 1.6rem;
   color: var(--accent-dark);
@@ -225,26 +220,19 @@ h2 {
   letter-spacing: 0.5px;
 }
 
-/* Vision Tile */
-.vision { 
-  grid-column: span 2; 
-}
-.vision p {
+.vision { grid-column: span 2; }
+.mission { grid-column: span 2; }
+.founders-container { grid-column: span 4; }
+
+.vision p, .mission-intro {
   color: #334e68;
   font-size: 1.05rem;
-}
-
-/* Mission Tile */
-.mission { 
-  grid-column: span 2; 
 }
 
 .mission-intro {
   border-bottom: 1px solid #e1eaf2;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  color: #334e68;
-  font-size: 0.95rem;
 }
 
 .mission-list {
@@ -268,11 +256,7 @@ h2 {
   margin-right: 5px;
 }
 
-/* Founders Section */
-.founders-container { 
-  grid-column: span 4; 
-}
-
+/* Founders Grid */
 .founders-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -280,11 +264,7 @@ h2 {
   margin-top: 1rem;
 }
 
-.founder-card {
-  text-align: center;
-  margin: 0;
-}
-
+.founder-card { text-align: center; margin: 0; }
 .founder-card img {
   width: 100%;
   aspect-ratio: 1/1;
@@ -293,21 +273,59 @@ h2 {
   box-shadow: 0 5px 15px rgba(1, 31, 75, 0.1);
   transition: all 0.3s ease;
   margin-bottom: 1rem;
-  border: 3px solid transparent;
 }
-
-.founder-card:hover img {
-  transform: scale(1.03);
-  border-color: var(--accent-primary);
-}
-
+.founder-card:hover img { transform: scale(1.03); }
 .founder-card figcaption {
   font-weight: 600;
   color: var(--accent-dark);
   font-size: 0.95rem;
 }
 
-/* Footer */
+/* ==========================================================================
+   7. PARTNERS & SPONSORS
+   ========================================================================== */
+.partners-container, .sponsors-container {
+    grid-column: span 4;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; 
+    margin-top: 1.5rem;
+    padding: 2rem;
+}
+
+.logo-item {
+    height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    background: white;
+    border-radius: 12px;
+}
+
+.logo-img {
+    max-height: 100%;
+    max-width: 220px; 
+    width: auto;
+    object-fit: contain;
+    filter: none; /* Full Color */
+    opacity: 1;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo-item:hover .logo-img {
+    transform: scale(1.1);
+}
+
 .footer {
   text-align: center;
   padding: 4rem 1rem;
@@ -317,61 +335,91 @@ h2 {
 }
 
 /* ==========================================================================
-   6. RESPONSIVE DESIGN
+   8. RESPONSIVE DESIGN (Fixes + Archive)
    ========================================================================== */
+
+/* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .hero-banner, .founders-container, .vision, .mission {
+  .hero-banner, .archive-container, .founders-container, .partners-container, .sponsors-container {
     grid-column: span 2;
   }
-  .logo-card {
-    width: 110px;
-    height: 110px;
-  }
-  .hero-banner h1 { font-size: 2.5rem; }
-}
-
-@media (max-width: 640px) {
-  body { padding: 1rem; }
-  
-  .bento-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .hero-banner, .vision, .mission, .founders-container {
+  .vision, .mission {
     grid-column: span 1;
   }
   
-  /* Mobile Hero Adjustments */
+  .founders-grid { grid-template-columns: repeat(2, 1fr); }
+  .logo-card { width: 110px; height: 110px; }
+  .hero-banner h1 { font-size: 2.5rem; }
+}
+
+/* MOBILE (max-width: 640px) */
+@media (max-width: 640px) {
+  body { 
+    padding: 1rem; 
+    overflow-x: hidden;
+  }
+  
+  .bento-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .tile, .hero-banner, .archive-container, .vision, .mission, .founders-container, .partners-container, .sponsors-container {
+    grid-column: auto;
+    width: 100%;
+    padding: 1.5rem;
+  }
+  
+  /* Hero Fixes */
   .hero-banner {
-    min-height: 450px;
-    background-position: center 80%;
+    min-height: 480px;
+    background-position: center bottom;
   }
   
   .hero-content-wrapper {
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem;
+    padding-bottom: 2rem;
     gap: 1rem;
   }
   
   .logo-card {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     padding: 12px;
+    margin-bottom: 0;
   }
   
-  .hero-banner h1 { font-size: 2rem; }
+  .hero-banner h1 { font-size: 2.2rem; }
+  .hero-banner .description { font-size: 0.95rem; }
   
+  /* Archive Mobile Fix */
+  .archive-grid {
+    grid-template-columns: 1fr; /* บนมือถือให้เหลือ 1 คอลัมน์เต็มๆ */
+  }
+
+  /* Founders Fixes */
   .founders-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   
-  .tile {
-    padding: 1.5rem;
+  /* Partners/Sponsors Fixes */
+  .logo-grid { 
+      gap: 1rem; 
+      padding: 0.5rem;
+      justify-content: space-around;
   }
+  
+  .logo-item { 
+      height: 80px;
+      width: 45%;
+  } 
+  
+  .logo-img { max-width: 100%; }
 }
