@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7YP51WN00"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-G7YP51WN00');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Innovedex 2026 | Official Portal</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* ==========================================================================
+       INNOVEDEX 2026 : CUSTOM STYLESHEET
+       Structure:
+       1. Global & Utilities
+       2. Hero Section
+       3. Track Selection (Registration)
+       4. Missions & Categories
+       5. Prizes Section
+       6. Timeline Section (Schedule)
+       7. Contact Section
+       8. Responsive Design (Mobile)
+       ========================================================================== */
+
+    /* --- 1. GLOBAL & UTILITIES --- */
+    :root {
+        --color-comp: #005b96;      /* สีหลัก Track แข่งขัน */
+        --color-train: #27ae60;     /* สีหลัก Track อบรม */
+        --color-final: #d35400;     /* สีหลัก รอบ Final */
+    }
+
+    /* --- 2. HERO SECTION --- */
+    .hero-2026 {
+        background-image: linear-gradient(135deg, rgba(1, 31, 75, 0.95) 0%, rgba(3, 57, 108, 0.85) 100%), url('img/composition/2026-hero.jpg');
+        background-size: cover;
+        background-position: center;
+        align-items: center;
+        text-align: center;
+        min-height: 450px;
+    }
+
+    .hero-2026 h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 0.5rem;
+        color: white;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        color: #b3cde0;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    /* --- 3. TRACK SELECTION (REGISTER) --- */
+    .track-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* แบ่งครึ่งเท่ากัน */
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .track-card {
+        padding: 2rem;
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .track-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Track A: Competition */
+    .track-comp {
+        background: #ffffff;
+        border: 2px solid var(--accent-primary);
+        box-shadow: 0 10px 30px rgba(0, 91, 150, 0.1);
+    }
+
+    .track-comp h3 {
+        color: var(--accent-primary);
+        font-size: 1.5rem;
+    }
+
+    /* Track B: Training */
+    .track-train {
+        background: linear-gradient(135deg, #e9f7ef 0%, #ffffff 100%);
+        border: 2px solid var(--color-train);
+    }
+
+    .track-train h3 {
+        color: var(--color-train);
+        font-size: 1.5rem;
+    }
+
+    /* Buttons */
+    .btn-register {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        transition: all 0.3s;
+    }
+
+    .btn-blue {
+        background: var(--accent-primary);
+        color: white;
+    }
+
+    .btn-blue:hover {
+        background: var(--accent-dark);
+        box-shadow: 0 5px 15px rgba(0, 91, 150, 0.3);
+    }
+
+    .btn-green {
+        background: var(--color-train);
+        color: white;
+    }
+
+    .btn-green:hover {
+        background: #1e8449;
+        box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+    }
+
+    /* --- 4. MISSIONS & CATEGORIES --- */
+    .mission-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .mission-box {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem;
+        border-left: 6px solid var(--accent-primary);
+        box-shadow: var(--shadow-soft);
+    }
+
+    /* --- 5. PRIZE SECTION --- */
+    .prize-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .prize-card {
+        background: #fff;
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid #e1eaf2;
+    }
+
+    .prize-header {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--text-main);
+        border-bottom: 2px solid #f0f4f8;
+        padding-bottom: 0.8rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .prize-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+    }
+
+    .prize-table td {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f9f9f9;
+    }
+
+    .prize-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .money {
+        font-weight: 700;
+        color: var(--accent-primary);
+        text-align: right;
+    }
+
+    /* --- 6. TIMELINE SECTION --- */
+    .timeline-compact {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .tl-item {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        padding: 1rem;
+        border-radius: 10px;
+        border-left: 4px solid #cbd5e1;
+    }
+
+    .tl-item.active {
+        border-left-color: var(--accent-primary);
+        background: #f8fbfe;
+    }
+
+    .tl-item.final {
+        border-left-color: var(--color-final);
+        background: #fdf2e9;
+    }
+
+    .tl-date {
+        font-weight: 700;
+        width: 100px;
+        color: #555;
+        flex-shrink: 0;
+    }
+
+    .tl-info {
+        flex: 1;
+    }
+
+    .tl-info strong {
+        display: block;
+        color: var(--text-main);
+    }
+
+    .tl-info span {
+        font-size: 0.85rem;
+        color: #888;
+    }
+
+    /* Registration Period Badge (Timeline Insert) */
+    .reg-period {
+        display: inline-block;
+        font-size: 0.85rem;
+        color: #2c3e50;
+        background-color: #f1f8ff;
+        border: 1px solid #d0e3f0;
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        margin-top: 0.5rem;
+        font-weight: 500;
+    }
+
+    .reg-period i {
+        color: var(--accent-primary);
+        margin-right: 5px;
+    }
+
+    /* Final Round Highlights */
+    .tl-item.final .reg-period {
+        background-color: #fff5eb;
+        border-color: #f5c6cb;
+        color: var(--color-final);
+    }
+
+    .tl-item.final .reg-period i {
+        color: var(--color-final);
+    }
+
+    /* --- 7. CONTACT SECTION --- */
+    .contact-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .contact-item {
+        flex: 1;
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.2rem;
+        background: #f8fbfe;
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--text-main);
+        border: 1px solid transparent;
+        transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        background: white;
+        border-color: #e1eaf2;
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        color: white;
+        flex-shrink: 0;
+    }
+
+    /* Brand Colors for Icons */
+    .icon-fb { background: #1877F2; }
+    .icon-line { background: #00B900; }
+    .icon-email { background: #EA4335; }
+
+    .contact-text h4 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .contact-text p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: #666;
+    }
+
+    /* --- 8. RESPONSIVE DESIGN (MOBILE) --- */
+    @media (max-width: 768px) {
+        
+        /* Stack Grids Vertically */
+        .track-container,
+        .prize-section,
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+
+        /* Adjust Hero Font */
+        .hero-2026 h1 {
+            font-size: 2rem;
+        }
+
+        /* Ensure Contact Items Fill Width */
+        .contact-item {
+            width: 100%;
+            min-width: 0;
+        }
+
+        /* Adjust Timeline for small screens (Optional) */
+        .tl-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+        .tl-date {
+            width: 100%;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<main class="bento-grid">
+    
+    <a href="index.html" style="grid-column: span 4; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-muted); font-weight: 500; margin-bottom: -1rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Home
+    </a>
+
+    <header class="tile hero-banner hero-2026" style="grid-column: span 4;">
+        <div class="hero-overlay"></div> 
+        <div class="hero-content-wrapper" style="justify-content: center;">
+            <div class="text-content">
+                <span class="hero-badge">Competition Year 2026</span>
+                <h1>Innovedex 2026</h1>
+                <p class="tagline">"Innovation - Education - Experimentation"</p>
+                <p class="description">
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="tile" style="grid-column: span 4;">
+    <h2>🗓️ กำหนดการ (Timeline)</h2>
+    <div class="timeline-compact">
+        
+        <div class="tl-item active">
+            <div class="tl-date">23-24 พ.ค.</div>
+            <div class="tl-info">
+                <strong>ภาคกลางและตะวันออก</strong>
+                <span>ณ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ วิทยาเขตปราจีนบุรี</span>
+                <div class="reg-period">
+                    <i class="far fa-calendar-check"></i> เปิดรับสมัคร: 15 ก.พ. - 14 มี.ค. 69
+                </div>
+            </div>
+        </div>
+
+        <div class="tl-item active">
+            <div class="tl-date">30-31 พ.ค.</div>
+            <div class="tl-info">
+                <strong>ภาคใต้</strong>
+                <span>ณ ม. สงขลานครินทร์</span>
+                <div class="reg-period">
+                    <i class="far fa-calendar-check"></i> เปิดรับสมัคร: 20 ก.พ. - 20 มี.ค. 69
+                </div>
+            </div>
+        </div>
+
+        <div class="tl-item active">
+            <div class="tl-date">6-7 มิ.ย.</div>
+            <div class="tl-info">
+                <strong>ภาคตะวันออกเฉียงเหนือ</strong>
+                <span>ณ ม. ขอนแก่น</span>
+                <div class="reg-period">
+                    <i class="far fa-calendar-check"></i> เปิดรับสมัคร: 3 มี.ค. - 4 เม.ย. 69
+                </div>
+            </div>
+        </div>
+
+        <div class="tl-item active">
+            <div class="tl-date">13-14 มิ.ย.</div>
+            <div class="tl-info">
+                <strong>ภาคเหนือ</strong>
+                <span>ณ ม. เชียงใหม่</span>
+                <div class="reg-period">
+                    <i class="far fa-calendar-check"></i> เปิดรับสมัคร: 15 มี.ค. - 25 เม.ย. 69
+                </div>
+            </div>
+        </div>
+
+        <div class="tl-item final">
+            <div class="tl-date" style="color: #d35400;">27-28 มิ.ย.</div>
+            <div class="tl-info">
+                <strong style="color: #d35400;">รอบชิงชนะเลิศระดับประเทศ (National Final) </strong>
+                <span>ณ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนุบรี</span>
+                <div class="reg-period">
+                    <i class="fas fa-flag-checkered"></i> เปิดรอบสมัครรอบ Final: 1 เม.ย. - 31 เม.ย. 69
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section class="tile" style="grid-column: span 4;">
+        <h2>🚩 ลงทะเบียนเข้าร่วมกิจกรรม (Tracks)</h2>
+        <div class="track-container">
+            
+            <div class="track-card track-comp">
+                <div>
+                    <h3>Track A: Competition</h3>
+                    <p style="color: #666; margin-top: 0.5rem;">สำหรับทีมที่มีความพร้อม ลงแข่งเพื่อชิงรางวัลและทุนการศึกษา (สมัครข้ามภาคได้)</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.9rem; color: #444;">
+                        <li>ค่าสมัคร ~2,500 บาท/คน/หมวดการแข่งขัน</li>
+                        <li>สมาชิก: 2 คน (อายุไม่เกิน 19 ปี) + 1 ผู้คุมทีม </li>
+                        <li>แข่งขันเก็บคะแนนจริง ตามกติกากลาง</li>
+                    </ul>
+                </div>
+                <a href="#" target="_blank" class="btn-register btn-blue">
+                    ลงทะเบียนแข่งขัน (Register)
+                </a>
+            </div>
+
+            <div class="track-card track-train">
+                <div>
+                    <h3>Track B: Workshop</h3>
+                    <p style="color: #666; margin-top: 0.5rem;">สำหรับผู้เริ่มต้น เน้นเรียนรู้ AI for Robotics & System Integration</p>
+                    <ul style="margin-top: 1rem; padding-left: 1.2rem; font-size: 0.9rem; color: #444;">
+                        <li>หุ่นยนต์แขนกล AI </li>
+                        <li>หุ่นยนต์เดินตามเส้น</li>
+                        <li>หุ่นยนต์เตะฟุตบอล</li>
+                    </ul>
+                </div>
+                <a href="#" target="_blank" class="btn-register btn-green">
+                    ลงทะเบียนอบรม (Workshop)
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="tile" style="grid-column: span 2;">
+        <h2>🤖 ประเภทการแข่งขัน (Missions)</h2>
+        <p style="font-size: 0.9rem; color: #888; margin-bottom: 1rem;">เลือกดาวน์โหลดกติกาตามประเภทที่สนใจ</p>
+        
+        <div class="mission-grid" style="grid-template-columns: 1fr;">
+            
+            <div class="mission-box">
+                <h3 style="color: var(--accent-dark);">1. The Sorter (Stationary Robot)</h3>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">หุ่นยนต์แบบอัตโนมัติ (ไม่เคลื่อนที่)  เน้นการตรวจจับ คัดแยก และตัดสินใจเชิงตรรกะ</p>
+                <a href="https://docs.google.com/document/d/1QG20Fbovg8lY0ep1jgNjyPoJeT8ubUsJBSPog0SzRzY/edit?usp=sharing" class="archive-btn" style="margin-top: 1rem; height: auto; padding: 0.6rem; font-size: 0.9rem; background: #eef6fa; color: var(--accent-primary);">
+                    📥 ดาวน์โหลดกติกา (The Sorter)
+                </a>
+            </div>
+
+            <div class="mission-box">
+                <h3 style="color: var(--accent-dark);">2. The Transporter (Mobile Robot)</h3>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">หุ่นยนต์แบบอัตโนมัติ (เคลื่อนที่) เน้นการนำทาง วางแผนเส้นทาง และการขนย้าย</p>
+                <a href="https://docs.google.com/document/d/1TWl-LS2Ruv6Od2O_aRrzt0tF5NFlsid0ESexE3StdM0/edit?usp=sharing" class="archive-btn" style="margin-top: 1rem; height: auto; padding: 0.6rem; font-size: 0.9rem; background: #eef6fa; color: var(--accent-primary);">
+                    📥 ดาวน์โหลดกติกา (The Transporter)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="tile" style="grid-column: span 2;">
+        <h2>🛠️ หมวดที่เปิดรับ (Categories)</h2>
+        <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">ทั้ง 2 Mission เปิดรับผู้เข้าแข่งขันใน 4 หมวด Hardware (แต่ละทีมลงสมัครได้มากกว่า 1 หมวด) ดังนี้</p>
+        
+        <div style="background: #f8fbfe; padding: 1.5rem; border-radius: 12px; border: 1px dashed #bcdcec;">
+            <ul style="list-style: none; padding: 0; line-height: 2;">
+                <li><strong>1. Open Platform:</strong> สำหรับหุ่นยนต์ที่ใช้ Controller ไม่จำกัดค่าย</li>
+                <li><strong>2. LEGO Education:</strong> สำหรับหุ่นยนต์ที่ใช้ Controller ของ LEGO Education</li>
+                <li><strong>3. INEX Category:</strong> สำหรับหุ่นยนต์ที่ใช้ Controller ของ INEX</li>
+                <li><strong>4. Princebot Category:</strong> สำหรับหุ่นยนต์ที่ใช้ Controller ของ Princebot</li>
+            </ul>
+            <p style="font-size: 0.8rem; color: var(--accent-primary); margin-top: 1rem;">*ทุกหมวดใช้กติกาเดียวกัน</p>
+        </div>
+    </section>
+
+    <section class="tile" style="grid-column: span 4; background-color: #011f4b; color: white;">
+            <h2 style="color: white; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">🏆 รางวัลและทุนการศึกษา</h2>
+            
+            <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.7); text-align: left; margin-bottom: 1.5rem; font-weight: 300;">
+                <i class="fas fa-medal"></i> ทุกทีมจะได้รับเกียรติบัตรระดับเหรียญ (Gold, Silver, Bronze) ตามเกณฑ์คะแนนที่กำหนดในแต่ละประเภทการแข่งขัน (Mission)
+            </div>
+
+            <div class="prize-section" style="margin-top: 0;">
+                
+                <div class="prize-card" style="background: rgba(255,255,255,0.1); border: none; color: white;">
+                    <div class="prize-header" style="color: #6497b1; border-color: rgba(255,255,255,0.2);">
+                        📍 รอบคัดเลือก (Regional)
+                    </div>
+                    <p style="font-size: 0.95rem; margin-bottom: 1rem; opacity: 0.9;">มอบโล่รางวัลและเกียรติบัตรสำหรับทีมลำดับที่ 1 - 3 ของทุกหมวดแข่งขัน</p>
+                    <div style="background: rgba(0, 0, 0, 0.2); padding: 1rem; border-radius: 8px;">
+                        <strong style="color: #ffd700;">Special Privilege:</strong><br>
+                        ทีมอันดับ 1 - 3 ของทุกหมวดในแต่ละภูมิภาค ได้สิทธิ์ <u>ยกเว้นค่าลงทะเบียน</u> ในรอบชิงชนะเลิศ
+                    </div>
+                </div>
+
+                <div class="prize-card" style="background: white; color: var(--text-main);">
+                    <div class="prize-header">
+                        🇹🇭 รอบชิงชนะเลิศ (National Final)
+                    </div>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">มอบโล่รางวัล, เกียรติบัตร และทุนการศึกษา ดังนี้</p>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="font-size: 0.9rem; color: var(--accent-dark);">🔸 Open Platform Category</strong>
+                        <table class="prize-table">
+                            <tr><td>รางวัลชนะเลิศ</td><td class="money">10,000 ฿</td></tr>
+                            <tr><td>รองชนะเลิศอันดับ 1</td><td class="money">8,000 ฿</td></tr>
+                            <tr><td>รองชนะเลิศอันดับ 2</td><td class="money">5,000 ฿</td></tr>
+                        </table>
+                        <div style="font-size: 0.75rem; color: #888; text-align: right; margin-top: 2px;">(รวม 46,000 บาท/ประเภท)</div>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <section class="tile" style="grid-column: span 4;">
+        <h2>📞 ช่องทางการติดต่อ (Contact Us)</h2>
+        <div class="contact-grid">
+            
+            <a href="https://www.facebook.com/innovedex/" target="_blank" class="contact-item">
+                <div class="contact-icon icon-fb">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>Facebook Page</h4>
+                    <p>facebook.com/innovedex</p>
+                </div>
+            </a>
+
+            <a href="https://line.me/ti/g2/4NmMCySYWjRSfgigHviHGhu4usAzZsJ9gTeIQg" target="_blank" class="contact-item">
+                <div class="contact-icon icon-line">
+                    <i class="fab fa-line"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>Line OpenChat</h4>
+                    <p>กลุ่มพูดคุย & สอบถามปัญหา</p>
+                </div>
+            </a>
+
+            <a href="mailto:innovedexrobotics@gmail.com" class="contact-item">
+                <div class="contact-icon icon-email">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                    <h4>Email Support</h4>
+                    <p>innovedexrobotics@gmail.com</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>© 2026 Innovedex Project. All rights reserved.</p>
+</footer>
+
+</body>
+
+</html>
+
+
+
+
+
