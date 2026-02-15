@@ -1,0 +1,221 @@
+/* ==========================================================================
+   INNOVEDEX REGISTRATION PORTAL STYLESHEET
+   Inherits from: 2026-style.css
+   ========================================================================== */
+
+/* Import Main Styles (If supported, otherwise we rely on HTML linking both) */
+@import url('2026-style.css');
+
+/* --- Specific Styles for Registration Portal --- */
+
+/* Section Headers */
+.reg-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--accent-dark);
+}
+
+.reg-desc {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #555;
+}
+
+/* Grid for Registration Buttons */
+.reg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Increased min-width for content */
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Registration Card/Button */
+.reg-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Align to top to allow content flow */
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    background: white;
+    text-decoration: none;
+    color: var(--text-main);
+    border: 2px solid transparent;
+    /* Default border */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    min-height: 220px;
+    /* Increased height */
+    position: relative;
+}
+
+.reg-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.reg-card i.main-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.reg-card:hover i.main-icon {
+    transform: scale(1.1);
+}
+
+.reg-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    text-align: center;
+}
+
+.reg-card span.sub-text {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Date Info Section */
+.reg-date-info {
+    width: 100%;
+    margin-top: auto;
+    /* Push to bottom if flex container has space */
+    padding-top: 1rem;
+    border-top: 1px dashed #eee;
+    font-size: 0.85rem;
+    color: #555;
+    text-align: left;
+}
+
+.date-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.date-row:last-child {
+    margin-bottom: 0;
+}
+
+.date-row i {
+    font-size: 1rem;
+    margin-top: 2px;
+    color: #999;
+}
+
+/* Highlight specific dates on hover */
+.reg-card:hover .date-row i {
+    color: inherit;
+    /* Allow parent theme color to take over */
+}
+
+/* --- THEME: TRAINING (WORKSHOP) --- */
+.theme-train .reg-card {
+    border-color: #e9f7ef;
+}
+
+.theme-train .reg-card:hover {
+    border-color: var(--color-train);
+    background: linear-gradient(to bottom, #fff, #f4fcf7);
+}
+
+.theme-train .reg-card i.main-icon,
+.theme-train .reg-card:hover .date-row i {
+    color: var(--color-train);
+}
+
+.theme-train h2 {
+    color: var(--color-train);
+    border-bottom: 2px solid #e9f7ef;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- THEME: COMPETITION --- */
+.theme-comp .reg-card {
+    border-color: #eef6fa;
+}
+
+.theme-comp .reg-card:hover {
+    border-color: var(--accent-primary);
+    background: linear-gradient(to bottom, #fff, #f0f7fb);
+}
+
+.theme-comp .reg-card i.main-icon,
+.theme-comp .reg-card:hover .date-row i {
+    color: var(--accent-primary);
+}
+
+.theme-comp h2 {
+    color: var(--accent-primary);
+    border-bottom: 2px solid #eef6fa;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+
+/* --- THEME: FINAL ROUND (Special) --- */
+.reg-card.final-round {
+    border-color: #fdf2e9;
+    background: #fffbf7;
+}
+
+.reg-card.final-round:hover {
+    border-color: var(--color-final);
+    background: linear-gradient(to bottom, #fff, #fef5e6);
+}
+
+.reg-card.final-round i.main-icon,
+.reg-card.final-round:hover .date-row i {
+    color: var(--color-final);
+}
+
+.reg-card.final-round h3 {
+    color: var(--color-final);
+}
+
+/* Info Box for Training Details */
+.info-box {
+    background: #f8fbfe;
+    border-left: 5px solid var(--accent-primary);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.info-box-text {
+    flex: 1;
+}
+
+.info-btn {
+    background: var(--accent-primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+.info-btn:hover {
+    background: var(--accent-dark);
+}
