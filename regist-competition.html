@@ -2,7 +2,6 @@
 <html lang="th">
 
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7YP51WN00"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,37 +18,125 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Link both stylesheets to ensure variable availability and overrides -->
     <link rel="stylesheet" href="2026-style.css">
     <link rel="stylesheet" href="regist-style.css">
+
+    <style>
+        .announcement-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .announcement-table th, .announcement-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .announcement-table th {
+            background-color: #f8f9fa;
+            color: #333;
+            font-weight: 600;
+        }
+        .status-cancelled {
+            color: #d9534f;
+            font-weight: bold;
+        }
+        .status-active {
+            color: #5cb85c;
+            font-weight: bold;
+        }
+        .reg-card.disabled {
+            opacity: 0.6;
+            pointer-events: none;
+            filter: grayscale(1);
+        }
+        .badge-cancel {
+            background: #ff4d4d;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 
 <body>
 
     <main class="bento-grid">
 
-        <!-- Back Button -->
         <a href="2026.html"
             style="grid-column: span 4; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-muted); font-weight: 500; margin-bottom: -1rem;">
             <i class="fas fa-arrow-left"></i>
             Back to 2026 Main Info
         </a>
 
-        <!-- Competition Section -->
         <section class="tile theme-comp" style="grid-column: span 4;">
             <div class="reg-header">
                 <h2><i class="fas fa-trophy"></i> ลงทะเบียนแข่งขัน (Competition)</h2>
             </div>
 
-            <p class="reg-desc" style="color:Tomato; background-color:yellow;">
-                ขณะนี้ ทีมที่สมัครแข่งขันในระดับภูมิภาค มีจำนวนทีมไม่ถึงขั้นต่ำที่กำหนด จึงขอให้ย้ายการสมัครเป็นการ อบรม และ แข่งขัน ในส่วน "Track B: Workshop" แทน
-                โดยเข้าที่ลิงก์ <a href=https://innovedex.com/regist-workshop> สมัคร Workshop </a>
-            </p>
->
+            <div class="reg-desc" style="border-left: 5px solid #ff6347; background-color: #fff9f9; padding: 20px; border-radius: 8px;">
+                <h3 style="color: Tomato; margin-top: 0;"><i class="fas fa-exclamation-triangle"></i> ประกาศปรับปรุงรูปแบบกิจกรรม</h3>
+                <p>เนื่องจากจำนวนทีมที่สมัครแข่งขันรอบภูมิภาคไม่ถึงเกณฑ์ขั้นต่ำ <strong>จึงขอยกเลิกการแข่งขัน (Track Competition) ในรอบภูมิภาคทั้ง 4 แห่ง</strong></p>
+                
+                <table class="announcement-table">
+                    <thead>
+                        <tr>
+                            <th>รายการกิจกรรม</th>
+                            <th>สถานะล่าสุด</th>
+                            <th>หมายเหตุ / โจทย์การแข่งขัน</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Track Competition (รอบภูมิภาค)</strong></td>
+                            <td class="status-cancelled">ยกเลิกการจัด</td>
+                            <td>แนะนำให้เปลี่ยนเป็นสมัคร Track Workshop แทน</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Track Workshop (Group A)</strong></td>
+                            <td class="status-active">เปิดปกติ</td>
+                            <td>โจทย์: The Sorter (Ranking)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Track Workshop (Group B)</strong></td>
+                            <td class="status-active">เปิดปกติ</td>
+                            <td>โจทย์: The Transporter (Ranking)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Track Workshop (Group C)</strong></td>
+                            <td class="status-active">เปิดปกติ</td>
+                            <td>โจทย์: Robot Soccer (แพ้คัดออก)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>การแข่งขันรอบชิงชนะเลิศ</strong></td>
+                            <td class="status-active">เปิดปกติ</td>
+                            <td>สมัครได้ถึง 19 เม.ย. 69</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="background: #fff3cd; padding: 10px; border-radius: 5px; font-size: 0.95rem;">
+                    * <u>หมายเหตุ</u>: กิจกรรม Workshop ภาคใต้จะมีเฉพาะ Group A เท่านั้น | กำหนดการ วันที่ 1 เรียนรู้ / วันที่ 2 แข่งขัน ตามเดิม
+                </p>
+                
+                <div style="margin-top: 15px;">
+                    <a href="https://innovedex.com/regist-workshop" class="btn-primary" style="background-color: #ff6347; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
+                        <i class="fas fa-edit"></i> เปลี่ยนไปสมัคร Track Workshop คลิกที่นี่
+                    </a>
+                </div>
+            </div>
+
             <div class="reg-grid">
 
-                <!-- NORTH -->
-                <a href="https://forms.gle/85iJ1g61sqKiFdLd7" target="_blank" class="reg-card">
+                <div class="reg-card disabled">
+                    <span class="badge-cancel">ยกเลิกการจัดรอบนี้</span>
                     <i class="fas fa-chess-knight main-icon"></i>
                     <h3>ภาคเหนือ</h3>
                     <span class="sub-text">Region Round</span>
@@ -58,15 +145,11 @@
                             <i class="far fa-calendar-alt"></i>
                             <div><strong>วันแข่ง:</strong> 13-14 มิ.ย. 69</div>
                         </div>
-                        <div class="date-row">
-                            <i class="far fa-calendar-check"></i>
-                            <div><strong>รับสมัคร:</strong> 16 ก.พ. - 3 เม.ย. 69</div>
-                        </div>
                     </div>
-                </a>
+                </div>
 
-                <!-- NORTHEAST -->
-                <a href="https://forms.gle/oc2WMiAGBgkgudrs5" target="_blank" class="reg-card">
+                <div class="reg-card disabled">
+                    <span class="badge-cancel">ยกเลิกการจัดรอบนี้</span>
                     <i class="fas fa-chess-knight main-icon"></i>
                     <h3>ภาคตะวันออกเฉียงเหนือ</h3>
                     <span class="sub-text">Region Round</span>
@@ -75,15 +158,11 @@
                             <i class="far fa-calendar-alt"></i>
                             <div><strong>วันแข่ง:</strong> 6-7 มิ.ย. 69</div>
                         </div>
-                        <div class="date-row">
-                            <i class="far fa-calendar-check"></i>
-                            <div><strong>รับสมัคร:</strong> 16 ก.พ. - 27 มี.ค. 69</div>
-                        </div>
                     </div>
-                </a>
+                </div>
 
-                <!-- CENTRAL & EAST -->
-                <a href="https://forms.gle/dHVoLC5kkhVyYhf9A" target="_blank" class="reg-card">
+                <div class="reg-card disabled">
+                    <span class="badge-cancel">ยกเลิกการจัดรอบนี้</span>
                     <i class="fas fa-chess-knight main-icon"></i>
                     <h3>ภาคกลาง & ตะวันออก</h3>
                     <span class="sub-text">Region Round</span>
@@ -92,15 +171,11 @@
                             <i class="far fa-calendar-alt"></i>
                             <div><strong>วันแข่ง:</strong> 23-24 พ.ค. 69</div>
                         </div>
-                        <div class="date-row">
-                            <i class="far fa-calendar-check"></i>
-                            <div><strong>รับสมัคร:</strong> 16 ก.พ. - 14 มี.ค. 69</div>
-                        </div>
                     </div>
-                </a>
+                </div>
 
-                <!-- SOUTH -->
-                <a href="https://forms.gle/U8STx9W7JCiJB3788" target="_blank" class="reg-card">
+                <div class="reg-card disabled">
+                    <span class="badge-cancel">ยกเลิกการจัดรอบนี้</span>
                     <i class="fas fa-chess-knight main-icon"></i>
                     <h3>ภาคใต้</h3>
                     <span class="sub-text">Region Round</span>
@@ -109,14 +184,9 @@
                             <i class="far fa-calendar-alt"></i>
                             <div><strong>วันแข่ง:</strong> 30-31 พ.ค. 69</div>
                         </div>
-                        <div class="date-row">
-                            <i class="far fa-calendar-check"></i>
-                            <div><strong>รับสมัคร:</strong> 16 ก.พ. - 20 มี.ค. 69</div>
-                        </div>
                     </div>
-                </a>
+                </div>
 
-                <!-- FINAL ROUND -->
                 <a href="https://forms.gle/44wshotJvf2G3Gqw7" target="_blank" class="reg-card final-round">
                     <i class="fas fa-crown main-icon"></i>
                     <h3>รอบชิงแชมป์ประเทศไทย</h3>
@@ -128,7 +198,7 @@
                         </div>
                         <div class="date-row">
                             <i class="far fa-calendar-check"></i>
-                            <div><strong>รับสมัคร:</strong> 16 มี.ค. - 19 เม.ย. 69</div>
+                            <div><strong>รับสมัครถึง:</strong> 19 เม.ย. 69</div>
                         </div>
                     </div>
                 </a>
@@ -143,6 +213,4 @@
 
 </body>
 
-
 </html>
-
