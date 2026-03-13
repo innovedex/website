@@ -7,7 +7,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-G7YP51WN00');
     </script>
 
@@ -17,21 +16,15 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <link rel="stylesheet" href="2026-style.css">
     <link rel="stylesheet" href="regist-style.css">
 
     <style>
-        :root {
-            --primary-blue: #2c3e50;
-            --accent-red: #e74c3c;
-        }
-
         .schedule-container {
             margin: 20px 0 30px 0;
             background: #fff;
             padding: 25px;
-            border-radius: 15px;
+            border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border: 1px solid #edf2f7;
         }
@@ -41,12 +34,12 @@
             align-items: center;
             gap: 12px;
             margin-bottom: 20px;
-            color: var(--primary-blue);
+            color: #2c3e50;
         }
 
         .table-responsive {
             overflow-x: auto;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid #e2e8f0;
         }
 
@@ -54,65 +47,78 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 0.95rem;
-            min-width: 900px; /* ป้องกันตารางบีบตัวจนอ่านไม่ออกบนจอเล็ก */
+            min-width: 1000px;
         }
 
         .workshop-table th {
             background-color: #f8fafc;
             color: #475569;
             font-weight: 600;
-            padding: 15px;
+            padding: 16px;
             border: 1px solid #e2e8f0;
             text-align: center;
         }
 
         .workshop-table td {
-            padding: 15px;
+            padding: 16px;
             border: 1px solid #e2e8f0;
             vertical-align: top;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        .track-col {
-            background-color: #f1f5f9;
-            font-weight: 700;
-            text-align: center;
-            color: var(--primary-blue);
+        /* Track Branding */
+        .track-cell { font-weight: 700; text-align: center; color: #2c3e50; }
+        .track-a { border-left: 6px solid #4A90E2 !important; }
+        .track-b { border-left: 6px solid #50B83C !important; }
+        .track-c { border-left: 6px solid #F5A623 !important; }
+
+        .comp-day-2 {
+            font-weight: 600;
+            color: #1e293b;
         }
 
-        .price-text {
-            color: var(--accent-red);
+        .price-tag {
+            background: #fff5f5;
+            color: #e74c3c;
             font-weight: 700;
-            text-align: center;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            border: 1px solid #feb2b2;
+        }
+
+        .free-tag {
+            background: #f0fff4;
+            color: #38a169;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            border: 1px solid #9ae6b4;
         }
 
         .benefit-list {
             margin: 0;
             padding-left: 20px;
-            list-style-type: disc;
+            list-style: none;
         }
 
-        .benefit-list li {
+        .benefit-list li::before {
+            content: "•";
+            color: #cbd5e0;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .highlight-kit {
+            color: #2d3748;
+            font-weight: 600;
+            display: block;
             margin-bottom: 4px;
         }
 
-        .badge-info {
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        /* ตกแต่ง Card เพิ่มเติม */
-        .reg-card {
-            transition: transform 0.3s ease;
-        }
-        .reg-card:hover {
-            transform: translateY(-5px);
-        }
+        .note-red { color: #e53e3e; font-size: 0.85rem; font-weight: 500; }
     </style>
 </head>
 
@@ -134,7 +140,7 @@
             <div class="info-box">
                 <div class="info-box-text">
                     <strong>📄 รายละเอียดเนื้อหาการฝึกอบรม</strong><br>
-                    <span style="font-size: 0.9rem; color: #666;">ศึกษาหัวข้อการอบรมได้ที่เอกสารนี้</span>
+                    <span style="font-size: 0.9rem; color: #666;">ศึกษาหัวข้อการอบรมและกติกาโดยละเอียด</span>
                 </div>
                 <a href="https://docs.google.com/document/d/e/2PACX-1vQGsTxRCTm_2X8rrkIJNVYmUNfUrCQdHUoEyXsycfrvMSTXm-WZ-7SnB0ZuW5RajjNIarGiON26Zw94/pub"
                     target="_blank" class="info-btn">
@@ -144,38 +150,32 @@
 
             <div class="schedule-container">
                 <div class="schedule-header">
-                    <i class="fas fa-tasks fa-lg"></i>
-                    <h3 style="margin:0">ตารางกิจกรรมและเงื่อนไขการอบรม</h3>
+                    <i class="fas fa-calendar-check fa-lg"></i>
+                    <h3 style="margin:0">กำหนดการเรียนรู้และโจทย์การแข่งขันภายในกลุ่ม</h3>
                 </div>
                 
                 <div class="table-responsive">
                     <table class="workshop-table">
                         <thead>
                             <tr>
-                                <th>Track</th>
-                                <th>วันที่ 1 (การเรียนรู้)</th>
-                                <th>วันที่ 2 (การแข่งขัน)</th>
-                                <th>ค่าสมัคร</th>
-                                <th>สิ่งที่ได้รับ</th>
-                                <th>รางวัล / สิทธิประโยชน์</th>
+                                <th style="width: 12%;">กลุ่ม (Track)</th>
+                                <th style="width: 18%;">วันที่ 1: เรียนรู้</th>
+                                <th style="width: 18%;">วันที่ 2: แข่งขัน</th>
+                                <th style="width: 12%;">ค่าลงทะเบียน</th>
+                                <th style="width: 20%;">สิ่งที่ได้รับ</th>
+                                <th style="width: 20%;">รางวัล / สิทธิประโยชน์</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="track-col">ฝึกอบรม<br>Group A</td>
-                                <td>อบรม หุ่นยนต์แขนกล และ ปัญญาประดิษฐ์ โดยอุปกรณ์ <strong>Arduino</strong></td>
-                                <td rowspan="3" style="text-align:center; vertical-align:middle; background-color: #fffdf5;">
-                                    <strong>แข่งขันแยกประเภท</strong><br><br>
-                                    กติกา Sorter และ Transporter<br>
-                                    แบ่งเป็นรอบเช้า/บ่าย<br>
-                                    (เลือกคะแนนรอบที่ดีที่สุด)
-                                    <br><br>
-                                    <span class="badge-info">Group C: Robot Soccer (คัดออก)</span>
-                                </td>
-                                <td class="price-text">ทีมละ 3,500 บาท</td>
+                                <td class="track-cell track-a">Group A</td>
+                                <td>อบรมหุ่นยนต์แขนกล และ AI (อุปกรณ์ Arduino)</td>
+                                <td class="comp-day-2">โจทย์: <strong>The Sorter</strong><br>(Ranking คะแนน)</td>
+                                <td align="center"><span class="price-tag">3,500.-</span></td>
                                 <td>
+                                    <span class="highlight-kit">ชุดหุ่นยนต์ AI - Robot Arm</span>
                                     <ul class="benefit-list">
-                                        <li><strong>ชุดหุ่นยนต์ AI - Robot Arm 3DOF</strong> + Metal Gripper (มูลค่า 4,900.-)</li>
+                                        <li>3DOF Serial Manipulator + Metal Gripper (4,900.-)</li>
                                         <li>อาหารกลางวัน / อาหารว่าง</li>
                                     </ul>
                                 </td>
@@ -187,21 +187,25 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="track-col">ฝึกอบรม<br>Group B</td>
-                                <td>อบรม หุ่นยนต์เดินตามเส้น โดยอุปกรณ์ <strong>INEX</strong></td>
-                                <td class="price-text">ไม่มีค่าใช้จ่าย<br><small>(งดภาคใต้)</small></td>
+                                <td class="track-cell track-b">Group B</td>
+                                <td>อบรมหุ่นยนต์เดินตามเส้น (อุปกรณ์ INEX)</td>
+                                <td class="comp-day-2">โจทย์: <strong>The Transporter</strong><br>(Ranking คะแนน)</td>
+                                <td align="center"><span class="free-tag">ฟรี *</span><br><span class="note-red">งดภาคใต้</span></td>
                                 <td>
                                     <ul class="benefit-list">
                                         <li>ชุดอุปกรณ์ฝึกอบรม (ยืมใช้)</li>
                                         <li>อาหารกลางวัน / อาหารว่าง</li>
                                     </ul>
                                 </td>
-                                <td rowspan="2" style="vertical-align:middle; text-align:center; color:#666;">ตามเกณฑ์การแข่งขันในกลุ่ม</td>
+                                <td rowspan="2" style="vertical-align:middle; text-align:center; color:#718096; background:#fcfcfc;">
+                                    เกียรติบัตรระดับเหรียญ<br>ตามเกณฑ์การแข่งขันในกลุ่ม
+                                </td>
                             </tr>
                             <tr>
-                                <td class="track-col">ฝึกอบรม<br>Group C</td>
-                                <td>อบรม หุ่นยนต์เตะฟุตบอล โดยอุปกรณ์ <strong>Princebot</strong></td>
-                                <td class="price-text">ไม่มีค่าใช้จ่าย<br><small>(งดภาคใต้)</small></td>
+                                <td class="track-cell track-c">Group C</td>
+                                <td>อบรมหุ่นยนต์เตะฟุตบอล (อุปกรณ์ Princebot)</td>
+                                <td class="comp-day-2">โจทย์: <strong>Robot Soccer</strong><br>(แพ้คัดออก)</td>
+                                <td align="center"><span class="free-tag">ฟรี *</span><br><span class="note-red">งดภาคใต้</span></td>
                                 <td>
                                     <ul class="benefit-list">
                                         <li>อาหารกลางวัน / อาหารว่าง</li>
@@ -212,82 +216,51 @@
                         </tbody>
                     </table>
                 </div>
-                <p style="margin-top:15px; color:#e74c3c; font-size:0.9rem;">* หมายเหตุ: ภาคใต้เปิดเฉพาะ Workshop Group A เท่านั้น</p>
+                <p style="margin-top:15px;" class="note-red">* ภาคใต้จัดการเรียนรู้เฉพาะ Group A เท่านั้น</p>
             </div>
 
             <p class="reg-desc">
-                การเลือกลงสมัคร Workshop สามารถลงสมัครข้ามพื้นที่ได้ โดยจะได้รับชุดอุปกรณ์ (Group A) หรือสิทธิการยืมใช้อุปกรณ์ (Group B/C) ตามที่โครงการกำหนด
+                สำหรับการสมัคร Workshop สามารถเลือกลงทะเบียนได้ทุกพื้นที่ (ยกเว้นภาคใต้ที่มีเฉพาะ Group A) กำหนดการจัดงาน วันแรกเป็นการเรียนรู้พื้นฐาน และวันที่สองเป็นการแข่งขันตามโจทย์ที่กำหนด
             </p>
 
             <div class="reg-grid">
-
                 <a href="https://forms.gle/DatPzTFEqCTbFYTMA" target="_blank" class="reg-card">
                     <i class="fas fa-map-marker-alt main-icon"></i>
-                    <h3>ภาคเหนือ</h3>
-                    <span class="sub-text">จ.เชียงใหม่</span>
+                    <h3>ภาคเหนือ (เชียงใหม่)</h3>
                     <div class="reg-date-info">
-                        <div class="date-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>อบรม:</strong> 13-14 มิ.ย. 69</div>
-                        </div>
-                        <div class="date-row">
-                            <i class="far fa-calendar-check"></i>
-                            <div><strong>รับสมัคร:</strong> 16 ก.พ. - 3 เม.ย. 69</div>
-                        </div>
+                        <div class="date-row"><i class="far fa-calendar-alt"></i> 13-14 มิ.ย. 69</div>
+                        <div class="date-row"><i class="far fa-calendar-check"></i> รับสมัครถึง 3 เม.ย. 69</div>
                     </div>
                 </a>
 
                 <a href="https://forms.gle/fYGRaypcREmj3xmb7" target="_blank" class="reg-card">
                     <i class="fas fa-map-marker-alt main-icon"></i>
-                    <h3>ภาคตะวันออกเฉียงเหนือ</h3>
-                    <span class="sub-text">จ.นครพนม</span>
+                    <h3>ภาคอีสาน (นครพนม)</h3>
                     <div class="reg-date-info">
-                        <div class="date-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>อบรม:</strong> 6-7 มิ.ย. 69</div>
-                        </div>
-                        <div class="date-row">
-                            <i class="far fa-calendar-check"></i>
-                            <div><strong>รับสมัคร:</strong> 16 ก.พ. - 27 มี.ค. 69</div>
-                        </div>
+                        <div class="date-row"><i class="far fa-calendar-alt"></i> 6-7 มิ.ย. 69</div>
+                        <div class="date-row"><i class="far fa-calendar-check"></i> รับสมัครถึง 27 มี.ค. 69</div>
                     </div>
                 </a>
 
                 <a href="https://forms.gle/mjxxazWF3nVcmhk26" target="_blank" class="reg-card">
                     <i class="fas fa-map-marker-alt main-icon"></i>
-                    <h3>ภาคกลาง & ตะวันออก</h3>
-                    <span class="sub-text">จ.ปราจีนบุรี</span>
+                    <h3>ภาคกลาง (ปราจีนบุรี)</h3>
                     <div class="reg-date-info">
-                        <div class="date-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>อบรม:</strong> 23-24 พ.ค. 69</div>
-                        </div>
-                        <div class="date-row">
-                            <i class="far fa-calendar-check"></i>
-                            <div><strong>รับสมัคร:</strong> 16 ก.พ. - 14 มี.ค. 69</div>
-                        </div>
+                        <div class="date-row"><i class="far fa-calendar-alt"></i> 23-24 พ.ค. 69</div>
+                        <div class="date-row"><i class="far fa-calendar-check"></i> รับสมัครถึง 14 มี.ค. 69</div>
                     </div>
                 </a>
 
                 <a href="https://forms.gle/1iarbuzcdJcFs7HR9" target="_blank" class="reg-card">
                     <i class="fas fa-map-marker-alt main-icon"></i>
-                    <h3>ภาคใต้</h3>
-                    <span class="sub-text">จ.สงขลา (หาดใหญ่)</span>
+                    <h3>ภาคใต้ (หาดใหญ่)</h3>
                     <div class="reg-date-info">
-                        <div class="date-row">
-                            <i class="far fa-calendar-alt"></i>
-                            <div><strong>อบรม:</strong> 30-31 พ.ค. 69</div>
-                        </div>
-                        <div class="date-row">
-                            <i class="far fa-calendar-check"></i>
-                            <div><strong>รับสมัคร:</strong> 16 ก.พ. - 20 มี.ค. 69</div>
-                        </div>
+                        <div class="date-row"><i class="far fa-calendar-alt"></i> 30-31 พ.ค. 69</div>
+                        <div class="date-row"><i class="far fa-calendar-check"></i> รับสมัครถึง 20 มี.ค. 69</div>
                     </div>
                 </a>
-
             </div>
         </section>
-
     </main>
 
     <footer class="footer">
@@ -295,5 +268,4 @@
     </footer>
 
 </body>
-
 </html>
