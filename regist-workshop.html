@@ -2,7 +2,6 @@
 <html lang="th">
 
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7YP51WN00"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -19,23 +18,79 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Link both stylesheets to ensure variable availability and overrides -->
     <link rel="stylesheet" href="2026-style.css">
     <link rel="stylesheet" href="regist-style.css">
+
+    <style>
+        .schedule-section {
+            margin-top: 2rem;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .schedule-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .workshop-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        .workshop-table th {
+            background-color: #f0f4f8;
+            color: #333;
+            font-weight: 600;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #dee2e6;
+        }
+        .workshop-table td {
+            padding: 12px;
+            border: 1px solid #dee2e6;
+            vertical-align: middle;
+        }
+        .group-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: white;
+        }
+        .bg-group-a { background-color: #4A90E2; }
+        .bg-group-b { background-color: #50B83C; }
+        .bg-group-c { background-color: #F5A623; }
+        
+        .note-footer {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        @media (max-width: 600px) {
+            .workshop-table { display: block; overflow-x: auto; }
+        }
+    </style>
 </head>
 
 <body>
 
     <main class="bento-grid">
 
-        <!-- Back Button -->
         <a href="2026.html"
             style="grid-column: span 4; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text-muted); font-weight: 500; margin-bottom: -1rem;">
             <i class="fas fa-arrow-left"></i>
             Back to 2026 Main Info
         </a>
 
-        <!-- Training Section -->
         <section class="tile theme-train" style="grid-column: span 4;">
             <div class="reg-header">
                 <h2><i class="fas fa-chalkboard-teacher"></i> ลงทะเบียนอบรม (Workshop)</h2>
@@ -52,13 +107,50 @@
                 </a>
             </div>
 
-            <p class="reg-desc">
+            <div class="schedule-section">
+                <h3 class="schedule-title"><i class="fas fa-calendar-alt"></i> กำหนดการและโจทย์กิจกรรม Workshop</h3>
+                <table class="workshop-table">
+                    <thead>
+                        <tr>
+                            <th>กลุ่ม (Group)</th>
+                            <th>รายการกิจกรรม</th>
+                            <th>รูปแบบการตัดสิน</th>
+                            <th>หมายเหตุ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center"><span class="group-badge bg-group-a">Group A</span></td>
+                            <td><strong>The Sorter</strong></td>
+                            <td align="center">Ranking คะแนน</td>
+                            <td>เปิดครบทุกภูมิภาค</td>
+                        </tr>
+                        <tr>
+                            <td align="center"><span class="group-badge bg-group-b">Group B</span></td>
+                            <td><strong>The Transporter</strong></td>
+                            <td align="center">Ranking คะแนน</td>
+                            <td>ยกเว้นภาคใต้</td>
+                        </tr>
+                        <tr>
+                            <td align="center"><span class="group-badge bg-group-c">Group C</span></td>
+                            <td><strong>Robot Soccer</strong></td>
+                            <td align="center">แพ้คัดออก</td>
+                            <td>ยกเว้นภาคใต้</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="note-footer">
+                    * ภาคใต้จัดการเรียนรู้เฉพาะ Group A เท่านั้น<br>
+                    * กำหนดการ: วันแรกจัดการเรียนรู้ / วันที่สองจัดการแข่งขันภายในกลุ่ม workshop
+                </p>
+            </div>
+
+            <p class="reg-desc" style="margin-top: 1.5rem;">
                 การเลือกลงสมัคร Workshop สามารถลงสมัครข้ามพื้นที่ได้
             </p>
 
             <div class="reg-grid">
 
-                <!-- NORTH -->
                 <a href="https://forms.gle/DatPzTFEqCTbFYTMA" target="_blank" class="reg-card">
                     <i class="fas fa-map-marker-alt main-icon"></i>
                     <h3>ภาคเหนือ</h3>
@@ -75,7 +167,6 @@
                     </div>
                 </a>
 
-                <!-- NORTHEAST -->
                 <a href="https://forms.gle/fYGRaypcREmj3xmb7" target="_blank" class="reg-card">
                     <i class="fas fa-map-marker-alt main-icon"></i>
                     <h3>ภาคตะวันออกเฉียงเหนือ</h3>
@@ -92,7 +183,6 @@
                     </div>
                 </a>
 
-                <!-- CENTRAL & EAST -->
                 <a href="https://forms.gle/mjxxazWF3nVcmhk26" target="_blank" class="reg-card">
                     <i class="fas fa-map-marker-alt main-icon"></i>
                     <h3>ภาคกลาง & ตะวันออก</h3>
@@ -109,7 +199,6 @@
                     </div>
                 </a>
 
-                <!-- SOUTH -->
                 <a href="https://forms.gle/1iarbuzcdJcFs7HR9" target="_blank" class="reg-card">
                     <i class="fas fa-map-marker-alt main-icon"></i>
                     <h3>ภาคใต้</h3>
