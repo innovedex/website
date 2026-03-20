@@ -312,7 +312,69 @@ h2 {
 }
 
 /* ==========================================================================
-   7. PARTNERS & SPONSORS
+   7. CONTACT SECTION
+   ========================================================================== */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: #f8fbfe;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-color: #e1eaf2;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+/* Brand Colors for Icons */
+.icon-fb { background: #1877F2; }
+.icon-line { background: #00B900; }
+.icon-email { background: #EA4335; }
+.icon-discord { background: #5865F2; }
+
+.contact-text h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.contact-text p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ==========================================================================
+   8. PARTNERS & SPONSORS
    ========================================================================== */
 .partners-container,
 .sponsors-container {
@@ -367,7 +429,7 @@ h2 {
 }
 
 /* ==========================================================================
-   8. RESPONSIVE DESIGN (Fixes + Archive)
+   9. RESPONSIVE DESIGN (Fixes + Archive)
    ========================================================================== */
 
 /* Tablet (max-width: 1024px) */
@@ -461,13 +523,22 @@ h2 {
     /* Archive Mobile Fix */
     .archive-grid {
         grid-template-columns: 1fr;
-        /* บนมือถือให้เหลือ 1 คอลัมน์เต็มๆ */
     }
 
     /* Founders Fixes */
     .founders-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+    }
+
+    /* Contact Mobile Fix */
+    .contact-grid {
+        gap: 1rem;
+    }
+
+    .contact-item {
+        width: 100%;
+        min-width: 0;
     }
 
     /* Partners/Sponsors Fixes */
